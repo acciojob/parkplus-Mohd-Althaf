@@ -1,7 +1,7 @@
 package com.driver.model;
 
 
-import com.sun.tools.javac.util.List;
+import java.util.*;
 
 import javax.persistence.*;
 

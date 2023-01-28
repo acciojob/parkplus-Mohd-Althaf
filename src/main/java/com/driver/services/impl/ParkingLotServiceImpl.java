@@ -60,7 +60,7 @@ public class ParkingLotServiceImpl implements ParkingLotService {
                 parkinglist.remove(spot1);
             }
         }
-        spot.getParkingLot().setSpotList((com.sun.tools.javac.util.List<Spot>) parkinglist);
+        spot.getParkingLot().setSpotList(parkinglist);
 
 
         ParkingLot parkingLot = parkingLotRepository1.findById(parkingLotId).get();

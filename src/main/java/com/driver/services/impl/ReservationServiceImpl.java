@@ -54,13 +54,13 @@ public class ReservationServiceImpl implements ReservationService {
                    reservations = new ArrayList<>();
                }
                reservations.add(reservation);
-               user.setReservationList((com.sun.tools.javac.util.List<Reservation>) reservations);
+               user.setReservationList(reservations);
 
                reservations = spot.getReservationList();
                if(reservations==null)
                    reservations = new ArrayList<>();
                spot.getReservationList().add(reservation);
-               spot.setReservationList((com.sun.tools.javac.util.List<Reservation>) reservations);
+               spot.setReservationList(reservations);
 
                spotRepository3.save(spot);
                reservationRepository3.save(reservation);
