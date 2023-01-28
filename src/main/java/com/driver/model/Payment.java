@@ -19,6 +19,9 @@ public class Payment {
     @JoinColumn
     private Reservation reservation;
 
+    public Payment() {
+    }
+
     public int getId() {
         return id;
     }

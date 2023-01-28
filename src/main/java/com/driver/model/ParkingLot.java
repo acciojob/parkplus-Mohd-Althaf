@@ -20,6 +20,9 @@ public class ParkingLot {
     @OneToMany(mappedBy = "parkingLot",cascade = CascadeType.ALL)
     private List<Spot> spotList;
 
+    public ParkingLot() {
+    }
+
     public int getId() {
         return id;
     }

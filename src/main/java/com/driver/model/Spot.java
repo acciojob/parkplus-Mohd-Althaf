@@ -27,6 +27,9 @@ public class Spot {
     @OneToMany(mappedBy = "spot",cascade = CascadeType.ALL)
     private List<Reservation> reservationList;
 
+    public Spot() {
+    }
+
     public Spot(Integer pricePerHour) {
         this.pricePerHour = pricePerHour;
     }
