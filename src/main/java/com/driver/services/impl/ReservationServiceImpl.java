@@ -33,7 +33,7 @@ public class ReservationServiceImpl implements ReservationService {
                int min = Integer.MAX_VALUE;
                List<Spot> spotList = parkingLot.getSpotList();
                for(Spot spot1:spotList){
-                   if(spot1.getPricePerHour()*timeInHours<min){
+                   if(spot1.getPricePerHour()*timeInHours<min && spot1.getOccupied()==false){
                        SpotType spotType = spot1.getSpotType();
                        if(spotType==SpotType.TWO_WHEELER && numberOfWheels==2)
                            spot = spot1;
@@ -48,6 +48,7 @@ public class ReservationServiceImpl implements ReservationService {
 
                Reservation reservation = new Reservation(numberOfWheels);
                reservation.setUser(user);
+               spot.setOccupied(true);
                reservation.setSpot(spot);
                List<Reservation> reservations = user.getReservationList();
                if(reservations==null){
