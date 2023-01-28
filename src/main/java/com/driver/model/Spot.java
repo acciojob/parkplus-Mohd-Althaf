@@ -1,6 +1,7 @@
 package com.driver.model;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
@@ -25,7 +26,7 @@ public class Spot {
 
 
     @OneToMany(mappedBy = "spot",cascade = CascadeType.ALL)
-    private List<Reservation> reservationList;
+    private List<Reservation> reservationList = new ArrayList<>();
 
     public Spot() {
     }
